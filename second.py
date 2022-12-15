@@ -7,10 +7,10 @@ for i in names:
     l.append(len(i))
 print(l)
 
-sorted_length = [*set(l)]  # here sorted set has created with n repeated value
+unique_length = [*set(l)]  # here sorted set has created with n repeated value
 frq = dict()
 
-for i in sorted_length:
+for i in unique_length:
     frq[i] = l.count(i)
 
 frq = sorted(frq.items(), key=lambda x: x[1])
