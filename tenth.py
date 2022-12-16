@@ -1,3 +1,4 @@
+from math import ceil,floor
 # first pattern
 
 # **_**
@@ -6,14 +7,24 @@
 # *___*
 # **_**
 
-n = 5
+n = 7
 
-for i in range(0,n):
-    for j in range(0,n):
-        if (i==0 and j==0) or (i==0 and j==n-1) or (i==n-1 and j==0) or (i==n-1 and j ==n-1) or (i==1 and j==0) or (i==1 and j==n-1) or (i==0 and j==1) or (i==0 and j==n-2) or (i==n-2 and j==0) or (i==n-2 and j==n-1) or (i==n-1 and j==1) or (i==n-1 and j==n-2):
+for i in range(1,n):
+    if i <= ceil(n/2):
+        for k in range(floor(n/2)-i+1,0,-1):
             print('*',end='')
-        else:
+        for j in range(2*i-1):
             print('_',end='')
+        for k in range(floor(n/2)-i+1,0,-1):
+            print('*',end='')
+        print()
+for i in range(1,floor(n/2)+1):
+    for k in range(i):
+        print('*',end='')
+    for j in range(n-(i*2)):
+        print('_',end='')
+    for k in range(i):
+        print('*',end='')
     print()
 
 print()
@@ -26,12 +37,22 @@ print()
 # _***_
 # __*__
 
-for i in range(0,n):
-    for j in range(0,n):
-        if (i==0 and j==0) or (i==0 and j==n-1) or (i==n-1 and j==0) or (i==n-1 and j ==n-1) or (i==1 and j==0) or (i==1 and j==n-1) or (i==0 and j==1) or (i==0 and j==n-2) or (i==n-2 and j==0) or (i==n-2 and j==n-1) or (i==n-1 and j==1) or (i==n-1 and j==n-2):
+for i in range(1,n):
+    if i <= ceil(n/2):
+        for k in range(floor(n/2)-i+1,0,-1):
             print('_',end='')
-        else:
+        for j in range(2*i-1):
             print('*',end='')
+        for k in range(floor(n/2)-i+1,0,-1):
+            print('_',end='')
+        print()
+for i in range(1,floor(n/2)+1):
+    for k in range(i):
+        print('_',end='')
+    for j in range(n-(i*2)):
+        print('*',end='')
+    for k in range(i):
+        print('_',end='')
     print()
 
 print()
