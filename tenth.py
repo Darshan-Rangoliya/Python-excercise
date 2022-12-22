@@ -7,25 +7,39 @@ from math import ceil,floor
 # *___*
 # **_**
 
-n = 7
+n = 9
 
-for i in range(1,n):
-    if i <= ceil(n/2):
-        for k in range(floor(n/2)-i+1,0,-1):
-            print('*',end='')
-        for j in range(2*i-1):
-            print('_',end='')
-        for k in range(floor(n/2)-i+1,0,-1):
-            print('*',end='')
-        print()
-for i in range(1,floor(n/2)+1):
-    for k in range(i):
-        print('*',end='')
-    for j in range(n-(i*2)):
-        print('_',end='')
-    for k in range(i):
-        print('*',end='')
+# for i in range(1,n):
+#     if i <= ceil(n/2):
+#         for k in range(floor(n/2)-i+1,0,-1):
+#             print('*',end='')
+#         for j in range(2*i-1):
+#             print('_',end='')
+#         for k in range(floor(n/2)-i+1,0,-1):
+#             print('*',end='')
+#         print()
+# for i in range(1,floor(n/2)+1):
+#     for k in range(i):
+#         print('*',end='')
+#     for j in range(n-(i*2)):
+#         print('_',end='')
+#     for k in range(i):
+#         print('*',end='')
+#     print()
+
+
+for index in range(0,n):
+    if index <= floor(n/2):
+        print('*'*floor((n/2)-index),end='')
+        print('_'*round(index*2+1),end='')
+        print('*'*floor((n/2)-index),end='')
+    else:
+        print('*'*floor(index%(n/2)+1),end='')
+        print('_'*floor((n%index)*2-1),end='')
+        print('*'*floor(index%(n/2)+1),end='')
     print()
+
+# print(5%3*2-1)
 
 print()
 
@@ -37,22 +51,33 @@ print()
 # _***_
 # __*__
 
-for i in range(1,n):
-    if i <= ceil(n/2):
-        for k in range(floor(n/2)-i+1,0,-1):
-            print('_',end='')
-        for j in range(2*i-1):
-            print('*',end='')
-        for k in range(floor(n/2)-i+1,0,-1):
-            print('_',end='')
-        print()
-for i in range(1,floor(n/2)+1):
-    for k in range(i):
-        print('_',end='')
-    for j in range(n-(i*2)):
-        print('*',end='')
-    for k in range(i):
-        print('_',end='')
+# for i in range(1,n):
+#     if i <= ceil(n/2):
+#         for k in range(floor(n/2)-i+1,0,-1):
+#             print('_',end='')
+#         for j in range(2*i-1):
+#             print('*',end='')
+#         for k in range(floor(n/2)-i+1,0,-1):
+#             print('_',end='')
+#         print()
+# for i in range(1,floor(n/2)+1):
+#     for k in range(i):
+#         print('_',end='')
+#     for j in range(n-(i*2)):
+#         print('*',end='')
+#     for k in range(i):
+#         print('_',end='')
+#     print()
+
+for index in range(0,n):
+    if index <= floor(n/2):
+        print('_'*floor((n/2)-index),end='')
+        print('*'*round(index*2+1),end='')
+        print('_'*floor((n/2)-index),end='')
+    else:
+        print('_'*floor(index%(n/2)+1),end='')
+        print('*'*floor((n%index)*2-1),end='')
+        print('_'*floor(index%(n/2)+1),end='')
     print()
 
 print()
