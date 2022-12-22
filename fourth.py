@@ -4,49 +4,32 @@ def fibo_fun(n):
     else:
         return fibo_fun(n-1)+fibo_fun(n-2)
 
-
 print(fibo_fun(8))
 
-# to reduece time complexity
+# recursion with memorisation
 
-num = int(input('Enter number :'))
+cache_store = {0:0,1:1}
 
-cache_store = {1: 1, 2: 1}
+num = int(input('Enter number--> '))
 
-
-def fibo_with_memorization(n):
-    if n in cache_store:
-        return cache_store[n]
+def rec_fun_with_momorisation(val):
+    if val in cache_store:
+        return cache_store[val]
     else:
-        cache_store[n] = fibo_with_memorization(n-1) + fibo_with_memorization(n-2)
-        return cache_store[n]
+        cache_store[val] = rec_fun_with_momorisation(val-1)+rec_fun_with_momorisation(val-2)
+        return cache_store[val]
 
+print(rec_fun_with_momorisation(num))
 
-for i in range(1, num+1):
-    if i == num:
-        print(fibo_with_memorization(i))
-
-numbers = [23, 44, 5, 67, 1, 1, 2, 4, 5]
-
-# sum = 0
-# def rec_sum(index):
-#     global sum
-#     if index == (len(numbers)):
-#         return sum
-#     else:
-#         sum+=numbers[index]
-#         return rec_sum(index+1)
-
-# rec_sum(0)
-# print(sum)
-
-# another way
-
+Numbers = [23, 44, 5, 67, 1, 1, 2, 4, 5]
+sum = 0
 def rec_sum(index):
-    if index < 0:
-        return 0
+    global sum
+    if index == (len(Numbers)):
+        return sum
     else:
-        return numbers[index]+rec_sum(index-1)
+        sum+=Numbers[index]
+        return rec_sum(index+1)
 
-
-print(rec_sum(len(numbers)-1))
+rec_sum(0)
+print(sum)

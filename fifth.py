@@ -15,18 +15,13 @@ n = int(input('Enter the number of which you want sum from list :'))
 #                 if tmp not in sum_list:
 #                     sum_list.append(tmp)
 
-
 # print(sum_list)
 
 from itertools import combinations
 
 pairs = set(combinations(numbers,2))
 
-sum_list = []
-
-for pair in pairs:
-    if sum(pair) == n:
-        sum_list.append(pair)
+sum_list = [pair for pair in pairs if sum(pair)==n]
 
 final_list = set((tuple(sorted(value)) for value in sum_list))
 

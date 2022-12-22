@@ -1,39 +1,30 @@
-names = ['Smith', 'Johnson', 'Williams', 'Jones', 'Brown', 'Davis', 'Miller',
-         'Wilson', 'Moore', 'Taylor', 'Anderson', 'Thomas', 'Jackson', 'White']
+names = ['Smith', 'Johnson', 'Williams', 'Jones', 'Brown', 'Davis', 'Miller','Wilson', 'Moore', 'Taylor', 'Anderson', 'Thomas', 'Jackson', 'White']
 
-l = []
+name_len_list = [len(name_length) for name_length in names]
 
-for i in names:
-    l.append(len(i))
-print(l)
+unique_length = [*set(name_len_list)]  # here sorted set has created with n repeated value
 
-unique_length = [*set(l)]  # here sorted set has created with n repeated value
 frq = dict()
 
-for i in unique_length:
-    frq[i] = l.count(i)
+for unique_val in unique_length:
+    frq[unique_val] = name_len_list.count(unique_val)
 
-frq = sorted(frq.items(), key=lambda x: x[1])
+frq = sorted(frq.items(), key=lambda x: x[1]) # sorting the dictonary to find least and most frequesnt names
 
 most_frq = frq[-3:]
 least_frq = frq[0:3]
 
 most_frq.reverse()
 
+def fun_to_print_frequent_names(frq_list):
+    for name_len in frq_list:
+        temp = [name for name in names if len(name)==name_len[0]]
+        print('{} names of length {}:{}'.format(name_len[1], name_len[0], temp))
+
 print('The three most frequent name lenghts are:')
 
-for i in most_frq:
-    temp = []
-    for j in names:
-        if len(j) == i[0]:
-            temp.append(j)
-    print('{} names of length {}:{}'.format(i[1], i[0], temp))
+fun_to_print_frequent_names(most_frq)
 
 print('The three least frequent name lenghts are:')
 
-for i in least_frq:
-    temp = []
-    for j in names:
-        if len(j) == i[0]:
-            temp.append(j)
-    print('{} names of length {}:{}'.format(i[1], i[0], temp))
+fun_to_print_frequent_names(least_frq)
