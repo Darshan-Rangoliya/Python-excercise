@@ -5,7 +5,8 @@ class BankAccount:
         self.balance = balance
         self.pin = pin
     
-    def check_pin(self,pin):
+    def check_pin(self):
+        pin = int(input('Enter youtr pin : '))
         if self.pin == pin:
             print('Account Holder Name : ',self.ach_name)
             print('Account Number : ',self.ac_number)
@@ -40,4 +41,4 @@ user1.deposite(200)
 
 user1.withdrew(200)
 
-user1.check_pin(1234)
+user1.check_pin()

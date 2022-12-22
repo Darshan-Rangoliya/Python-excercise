@@ -7,10 +7,7 @@ print('C. Display sum of odd numbers')
 print('D. Number of duplicate numbers')
 print('E. Display list without duplicate numbers')
 
-# numbers = [i for i in range(10)]
-
 numbers = [2, 4, 5, 2, 12, 44, 5, 1, 2, 3]
-
 print(numbers)
 
 choice = str(input('Enter your choice : '))
@@ -34,12 +31,3 @@ elif choice == 'd' or choice == 'D':
 elif choice == 'e' or choice == 'E':
     newList = [*set(numbers)]
     print(newList)
-
-# other mathods
-
-    # res = []
-    # [res.append(x) for x in numbers if x not in res]
-    # print(res)
-
-    # res1 = [i for n,i in enumerate(numbers) if i not in numbers[:n]]
-    # print(res1)

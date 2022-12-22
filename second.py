@@ -22,9 +22,7 @@ def fun_to_print_frequent_names(frq_list):
         print('{} names of length {}:{}'.format(name_len[1], name_len[0], temp))
 
 print('The three most frequent name lenghts are:')
-
 fun_to_print_frequent_names(most_frq)
 
 print('The three least frequent name lenghts are:')
-
 fun_to_print_frequent_names(least_frq)

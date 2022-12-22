@@ -7,11 +7,8 @@ def fibo_fun(n):
 print(fibo_fun(8))
 
 # recursion with memorisation
-
 cache_store = {0:0,1:1}
-
 num = int(input('Enter number--> '))
-
 def rec_fun_with_momorisation(val):
     if val in cache_store:
         return cache_store[val]
@@ -21,6 +18,7 @@ def rec_fun_with_momorisation(val):
 
 print(rec_fun_with_momorisation(num))
 
+# sum of the given list with recursion
 Numbers = [23, 44, 5, 67, 1, 1, 2, 4, 5]
 sum = 0
 def rec_sum(index):

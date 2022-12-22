@@ -1,20 +1,19 @@
+def arithmatic_progression_fun(arthmetic_list,ap):
+    A_P_len = len(arthmetic_list)
+    for index in range(A_P_len-1):
+        if arthmetic_list[index+1] - ap != arthmetic_list[index]:
+            arthmetic_list[index+1] = arthmetic_list[index] + ap
+    print(arthmetic_list)
+
+def geometric_progression_fun(geometric_list,gp):
+    G_P_len = len(geometric_list)
+    for index in range(G_P_len-1):
+        if geometric_list[index+1] / gp != geometric_list[index]:
+            geometric_list[index+1] = geometric_list[index] * gp
+    print(geometric_list)
+
 wrong_A_P = [2, 5, 8, 11, 15, 17]
 wrong_G_P = [3, 9, 27, 81, 244, 729]
 
-A_P_len = len(wrong_A_P)
-G_P_len = len(wrong_G_P)
-
-A_progression = 3
-G_progression = 3
-
-for index in range(A_P_len-1):
-    if wrong_A_P[index+1] - A_progression != wrong_A_P[index]:
-        wrong_A_P[index+1] = wrong_A_P[index] + A_progression
-
-print(wrong_A_P)
-
-for index in range(G_P_len-1):
-    if wrong_G_P[index+1] / G_progression != wrong_G_P[index]:
-        wrong_G_P[index+1] = wrong_G_P[index] * G_progression
-
-print(wrong_G_P)
+arithmatic_progression_fun(wrong_A_P,3)
+geometric_progression_fun(wrong_G_P,3)

@@ -26,13 +26,13 @@ if __name__ == '__main__':
     numbers = [2, 5, 1, 66, 22, 11, 10]
 
 n1 = Number(numbers)
-
 print('Numbers: ', n1.get())
-
-print('New Values: ',n1.change_original_value(func=lambda x:x*2))
-
-print('Filtered Values: ',n1.filter_value(filter_func=lambda x:x%2==0))
-
+mul = int(input('Enter value with which you want to change the value: '))
+print('New Values: ',n1.change_original_value(func=lambda x:x*mul))
+odd_even = int(input('Enter which values you want (1 for odd 2 for even): '))
+if odd_even == 1:
+    print('Filtered Values: ',n1.filter_value(filter_func=lambda x:x%2!=0))
+else:
+    print('Filtered Values: ',n1.filter_value(filter_func=lambda x:x%2==0))
 print('Compounded value: ',n1.compount_the_numbers(compound_func=lambda a,b:a+b))
-
 print('Sorted list: ', n1.sort())
